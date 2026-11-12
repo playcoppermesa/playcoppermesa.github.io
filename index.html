@@ -7,7 +7,8 @@
   <meta name="description" content="Copper Mesa: Horse Reining is a 3D western horse game about reining: sliding stops, spins, rollbacks and lead changes. Build a stable of Quarter Horses and compete for the championship. Free demo coming soon.">
   <link rel="canonical" href="https://playcoppermesa.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#f6a26b">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#2a1a10">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Copper Mesa: Horse Reining">
@@ -17,7 +18,7 @@
   <meta property="og:image" content="https://playcoppermesa.com/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Copper Mesa: Horse Reining title over a desert arena at sunset">
+  <meta property="og:image:alt" content="The Copper Mesa trophy-buckle logo: a horse and rider in a sliding stop on a copper buckle with a turquoise ribbon">
   <meta name="twitter:card" content="summary_large_image">
 
   <script type="application/ld+json">
@@ -27,11 +28,12 @@
     "name": "Copper Mesa: Horse Reining",
     "alternateName": "Copper Mesa",
     "url": "https://playcoppermesa.com/",
-    "description": "A 3D western horse game about reining, the western riding sport of sliding stops, spins, rollbacks and lead changes. Build a stable, create your rider, and work your way up to the Copper Mesa Championship.",
+    "description": "A 3D western horse game about reining, the western riding sport of sliding stops, spins, rollbacks and lead changes. Build a stable of Quarter Horses, create your rider, and work your way up to the Copper Mesa Championship.",
     "genre": ["Sports", "Simulation"],
     "gamePlatform": "Web browser",
     "applicationCategory": "Game",
     "image": "https://playcoppermesa.com/social-card.png",
+    "logo": "https://playcoppermesa.com/img/logo-main.svg",
     "sameAs": [
       "https://www.youtube.com/@playcoppermesa",
       "https://www.tiktok.com/@playcoppermesa",
@@ -41,172 +43,121 @@
   </script>
 
   <style>
+    @font-face {
+      font-family: "Alfa Slab One";
+      src: url("fonts/AlfaSlabOne-Regular.ttf") format("truetype");
+      font-display: swap;
+    }
     :root {
-      --ink: #3b2416;
-      --cream: #fff6e6;
-      --card: #fffdf8;
-      --copper: #a24e28;
-      --copper-light: #c8693b;
-      --sand: #f0cf9a;
-      --sage: #6f9a5d;
-      --font: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, "Arial Rounded MT Bold", system-ui, sans-serif;
+      --ink: #3B2416;
+      --night: #22150d;
+      --cream: #FFF4E2;
+      --card: #fffaf1;
+      --copper: #B5651D;
+      --copper-light: #D9894A;
+      --copper-deep: #7A3E14;
+      --turq: #2BB5A8;
+      --turq-deep: #1E8C82;
+      --turq-dark: #14635C;
+      --slab: "Alfa Slab One", Rockwell, "Roboto Slab", Georgia, serif;
+      --body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: var(--font);
-      color: var(--ink);
-      background: var(--cream);
-      line-height: 1.55;
-      font-size: 18px;
-    }
-    a { color: var(--copper); }
-    a:focus-visible, .btn:focus-visible { outline: 4px solid #2b6cb0; outline-offset: 3px; }
+    body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--cream); line-height: 1.6; font-size: 18px; }
+    a { color: var(--turq-dark); }
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--turq); outline-offset: 3px; }
+    h1, h2, h3 { font-family: var(--slab); font-weight: 400; letter-spacing: .01em; }
 
     /* ---------- Hero ---------- */
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 48px 0 0;
+      position: relative;
       overflow: hidden;
-      background: linear-gradient(#8ec5f0 0%, #cfe3ef 30%, #fbd38d 70%, #f6a26b 100%);
-      border-bottom: 3px solid var(--ink);
+      text-align: center;
+      color: var(--cream);
+      padding: 40px 20px 0;
+      background:
+        radial-gradient(ellipse 60% 45% at 50% 62%, rgba(217, 137, 74, .55), rgba(217, 137, 74, 0) 70%),
+        linear-gradient(#170e08 0%, #2a1a10 45%, #4a2a16 100%);
     }
-    .hero-text { max-width: 760px; padding: 0 20px; }
+    .hero-inner { position: relative; z-index: 2; max-width: 820px; margin: 0 auto; }
     .status {
       display: inline-block;
-      background: var(--ink);
-      color: #ffe9c7;
+      background: var(--turq-dark);
+      color: var(--cream);
       font-weight: 700;
-      font-size: 15px;
-      letter-spacing: .04em;
+      font-size: 14px;
+      letter-spacing: .08em;
       padding: 6px 14px;
+      border: 2px solid var(--turq);
       border-radius: 999px;
-      margin: 0 0 18px;
+      margin: 0 0 14px;
     }
-    h1 {
-      margin: 0;
-      font-size: clamp(40px, 8vw, 84px);
-      line-height: 1.02;
-      font-weight: 900;
-      letter-spacing: -.01em;
-      text-shadow: 3px 3px 0 #fff6e6;
-    }
-    h1 .sub {
-      display: block;
-      color: var(--copper);
-      font-size: .62em;
-      margin-top: 6px;
-    }
-    .tagline {
-      font-size: clamp(19px, 2.6vw, 24px);
-      font-weight: 700;
-      margin: 18px auto 26px;
-      max-width: 34ch;
-    }
+    .logo { display: block; width: min(560px, 92vw); height: auto; margin: 0 auto; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .45)); }
+    h1.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .tagline { font-family: var(--slab); font-size: clamp(20px, 3vw, 28px); margin: 10px auto 22px; max-width: 30ch; color: #ffe7c4; }
     .buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--copper);
-      color: #fff;
-      font-weight: 800;
-      font-size: 18px;
-      text-decoration: none;
-      padding: 12px 20px;
-      border: 3px solid var(--ink);
-      border-radius: 14px;
-      box-shadow: 4px 4px 0 var(--ink);
-      transition: transform .12s ease, box-shadow .12s ease;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--turq-dark); color: var(--cream);
+      font-weight: 800; font-size: 18px; text-decoration: none;
+      padding: 12px 20px; border: 2px solid var(--turq); border-radius: 12px;
+      box-shadow: 0 4px 0 #0b3a36;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
     }
-    .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
-    .btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
-    .btn.light { background: var(--card); color: var(--ink); }
-
-    .scene {
-      width: 100%;
-      height: clamp(170px, 28vw, 560px);
-      margin-top: 36px;
-    }
-    .scene svg { width: 100%; height: 100%; display: block; }
-    .puff { transform-box: fill-box; transform-origin: center; animation: puff 3.2s ease-out infinite; }
-    .puff:nth-of-type(2) { animation-delay: .5s; }
-    .puff:nth-of-type(3) { animation-delay: 1s; }
-    .puff:nth-of-type(4) { animation-delay: 1.5s; }
-    .puff:nth-of-type(5) { animation-delay: 2s; }
-    @keyframes puff {
-      0%   { transform: translate(0, 0) scale(.6); opacity: .95; }
-      100% { transform: translate(40px, -26px) scale(1.5); opacity: 0; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .puff { animation: none; opacity: .8; }
-      .btn { transition: none; }
-      html { scroll-behavior: auto; }
-    }
+    .btn:hover { background: var(--turq-deep); transform: translateY(-2px); box-shadow: 0 6px 0 #0b3a36; }
+    .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #0b3a36; }
+    .mesas { display: block; width: 100%; height: clamp(80px, 12vw, 170px); margin-top: 28px; }
 
     /* ---------- Sections ---------- */
     main section { padding: 64px 20px; }
-    .wrap { max-width: 1040px; margin: 0 auto; }
-    h2 {
-      font-size: clamp(30px, 4.5vw, 44px);
-      line-height: 1.1;
-      margin: 0 0 14px;
-      font-weight: 900;
-    }
+    .wrap { max-width: 1060px; margin: 0 auto; }
+    h2 { font-size: clamp(30px, 4.4vw, 44px); line-height: 1.1; margin: 0 0 14px; color: var(--ink); }
+    h2 .accent { color: var(--copper); }
     .lead { font-size: 20px; max-width: 62ch; margin: 0 0 28px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
     .grid.three { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
     .card {
       background: var(--card);
-      border: 3px solid var(--ink);
-      border-radius: 18px;
-      box-shadow: 6px 6px 0 var(--ink);
-      padding: 20px 22px;
-    }
-    .card h3 { margin: 0 0 6px; font-size: 22px; font-weight: 800; }
-    .card p { margin: 0; }
-    .icon { font-size: 34px; line-height: 1; display: block; margin-bottom: 10px; }
-
-    .reining { background: var(--sand); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
-    .score {
-      display: inline-block;
-      background: var(--card);
-      border: 3px dashed var(--ink);
+      border: 2px solid #e2c49c;
+      border-top: 5px solid var(--copper);
       border-radius: 14px;
-      padding: 10px 16px;
-      font-weight: 700;
-      margin: 0 0 28px;
+      padding: 20px 22px;
+      box-shadow: 0 6px 16px rgba(59, 36, 22, .08);
     }
+    .card h3 { margin: 0 0 6px; font-size: 22px; color: var(--ink); }
+    .card p { margin: 0; }
+    .icon { font-size: 30px; line-height: 1; display: block; margin-bottom: 10px; }
+
+    .reining { background: #f6e3c6; border-top: 4px solid var(--copper); border-bottom: 4px solid var(--copper); }
+    .reining-top { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: center; margin-bottom: 26px; }
+    .reining-top img { width: 100%; height: auto; }
+    .score {
+      display: inline-block; background: var(--card); border: 2px dashed var(--copper);
+      border-radius: 12px; padding: 10px 16px; font-weight: 700;
+    }
+    @media (max-width: 760px) { .reining-top { grid-template-columns: 1fr; } .reining-top img { max-width: 440px; margin: 0 auto; } }
 
     .follow { text-align: center; }
     .follow .lead { margin-left: auto; margin-right: auto; }
     .email { margin-top: 26px; font-size: 19px; }
     .email a { font-weight: 800; }
 
-    footer {
-      background: var(--ink);
-      color: #ffe9c7;
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 15px;
-    }
+    footer { background: var(--night); color: #ffe7c4; text-align: center; padding: 30px 20px; font-size: 15px; }
+    footer img { width: 84px; height: auto; display: block; margin: 0 auto 10px; }
     footer p { margin: 4px 0; }
+
+    @media (prefers-reduced-motion: reduce) { .btn { transition: none; } html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
 
   <header class="hero">
-    <div class="hero-text">
+    <div class="hero-inner">
       <p class="status">FREE DEMO COMING SOON</p>
-      <h1>Copper Mesa<span class="sub">Horse Reining</span></h1>
+      <h1 class="sr">Copper Mesa: Horse Reining</h1>
+      <img class="logo" src="img/logo-main.svg" width="1200" height="900"
+           alt="Copper Mesa: Horse Reining logo: a horse and rider in a sliding stop on a copper trophy buckle with a turquoise ribbon">
       <p class="tagline">Spin, slide and win in a western horse reining game.</p>
       <div class="buttons">
         <a class="btn" href="https://www.youtube.com/@playcoppermesa" rel="me noopener">&#9654; YouTube</a>
@@ -214,62 +165,17 @@
         <a class="btn" href="https://www.instagram.com/playcoppermesa/" rel="me noopener">&#9673; Instagram</a>
       </div>
     </div>
-
-    <div class="scene" aria-hidden="true">
-      <svg viewBox="0 110 1440 410" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-        <!-- sun -->
-        <circle cx="830" cy="275" r="112" fill="#fff1b8" opacity=".55"/>
-        <circle cx="830" cy="275" r="92" fill="#ffe08a" stroke="#f2b45a" stroke-width="4"/>
-        <!-- far mesas -->
-        <path d="M0 330 H90 L130 240 H340 L380 330 H560 L600 270 H770 L800 330 H1000 L1040 205 H1300 L1340 330 H1440 V520 H0 Z"
-              fill="#e39a6a" stroke="#8a4a2c" stroke-width="3" stroke-linejoin="round"/>
-        <!-- near mesas -->
-        <path d="M0 385 H190 L235 290 H470 L515 385 H880 L915 320 H1120 L1165 385 H1440 V520 H0 Z"
-              fill="#c0623a" stroke="#5a2e1b" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M250 320 H455 M262 345 H470 M930 345 H1105" stroke="#a24e28" stroke-width="6" stroke-linecap="round"/>
-        <!-- ground -->
-        <path d="M0 410 Q720 380 1440 410 V520 H0 Z" fill="#f0cf9a" stroke="#5a2e1b" stroke-width="4"/>
-        <!-- arena fence -->
-        <g stroke="#3b2416" stroke-width="3">
-          <rect x="0" y="420" width="1440" height="10" rx="4" fill="#8a4b2a"/>
-          <rect x="0" y="446" width="1440" height="10" rx="4" fill="#8a4b2a"/>
-          <g fill="#6e3a1f">
-            <rect x="40" y="406" width="16" height="64" rx="5"/>
-            <rect x="200" y="406" width="16" height="64" rx="5"/>
-            <rect x="360" y="406" width="16" height="64" rx="5"/>
-            <rect x="1080" y="406" width="16" height="64" rx="5"/>
-            <rect x="1240" y="406" width="16" height="64" rx="5"/>
-            <rect x="1400" y="406" width="16" height="64" rx="5"/>
-          </g>
-        </g>
-        <!-- arena dirt -->
-        <rect x="0" y="470" width="1440" height="50" fill="#e8bf86"/>
-        <!-- sliding-stop tracks with a dust cloud at the end -->
-        <rect x="520" y="482" width="360" height="8" rx="4" fill="#c99a62"/>
-        <rect x="520" y="498" width="360" height="8" rx="4" fill="#c99a62"/>
-        <g fill="#fff3dc" stroke="#c99a62" stroke-width="3">
-          <circle class="puff" cx="880" cy="488" r="16"/>
-          <circle class="puff" cx="900" cy="494" r="20"/>
-          <circle class="puff" cx="870" cy="500" r="14"/>
-          <circle class="puff" cx="915" cy="482" r="12"/>
-          <circle class="puff" cx="892" cy="478" r="10"/>
-        </g>
-        <!-- cacti -->
-        <g fill="#6f9a5d" stroke="#2f4a2a" stroke-width="4" stroke-linejoin="round">
-          <rect x="130" y="300" width="34" height="120" rx="17"/>
-          <path d="M130 360 H108 a14 14 0 0 1 -14 -14 V320 a11 11 0 0 1 22 0 V340 H130"/>
-          <path d="M164 340 H184 V310 a11 11 0 0 1 22 0 V342 a16 16 0 0 1 -16 16 H164"/>
-          <rect x="1300" y="340" width="26" height="80" rx="13"/>
-          <path d="M1326 372 H1342 V350 a9 9 0 0 1 18 0 V374 a12 12 0 0 1 -12 12 H1326"/>
-        </g>
-      </svg>
-    </div>
+    <svg class="mesas" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120 L140 120 L175 70 L360 70 L395 120 L620 120 L650 88 L820 88 L850 120 L1060 120 L1100 52 L1330 52 L1370 120 L1440 120 V170 H0 Z" fill="#5a3218" opacity=".9"/>
+      <path d="M0 145 L230 145 L262 108 L470 108 L505 145 L930 145 L962 116 L1150 116 L1185 145 L1440 145 V170 H0 Z" fill="#3b2213"/>
+      <rect y="160" width="1440" height="10" fill="#FFF4E2"/>
+    </svg>
   </header>
 
   <main>
     <section id="game">
       <div class="wrap">
-        <h2>Real reining, made for everyone</h2>
+        <h2>Real reining, <span class="accent">made for everyone</span></h2>
         <p class="lead">You've just moved to Copper Mesa, a small desert town that lives for its arena. Build a stable of horses, train them, and compete in reining shows. Each win opens up more of the town, all the way to the Copper Mesa Championship.</p>
         <div class="grid">
           <div class="card">
@@ -298,34 +204,22 @@
 
     <section id="what-is-reining" class="reining">
       <div class="wrap">
-        <h2>What is reining?</h2>
-        <p class="lead">Reining is a western riding sport. A horse and rider perform a set pattern of moves in an arena, and judges score how precise, smooth and willing the horse is. It's sometimes called the dressage of western riding.</p>
-        <p class="score">Every run starts at 70 points. Each move earns between &minus;1&frac12; and +1&frac12;.</p>
+        <div class="reining-top">
+          <div>
+            <h2>What is reining?</h2>
+            <p class="lead">Reining is a western riding sport. A horse and rider perform a set pattern of moves in an arena, and judges score how precise, smooth and willing the horse is. It's sometimes called the dressage of western riding.</p>
+            <p class="score">Every run starts at 70 points. Each move earns between &minus;1&frac12; and +1&frac12;.</p>
+          </div>
+          <img src="img/horse-ink.svg" width="2071" height="1669" loading="lazy"
+               alt="Illustration of a horse and rider in a sliding stop, dirt spraying from the hind legs">
+        </div>
         <div class="grid three">
-          <div class="card">
-            <h3>Sliding stop</h3>
-            <p>From a fast lope, the horse sits back on its hind legs and slides to a stop, leaving long tracks in the dirt.</p>
-          </div>
-          <div class="card">
-            <h3>Spin</h3>
-            <p>The horse turns in place, pivoting on its inside back foot. Good spins are fast, flat and stop exactly on target.</p>
-          </div>
-          <div class="card">
-            <h3>Rollback</h3>
-            <p>Right after a stop, the horse swings around over its hind legs and lopes off the other way in one smooth move.</p>
-          </div>
-          <div class="card">
-            <h3>Circles</h3>
-            <p>Big fast circles and small slow ones show that the rider controls the horse's speed and shape.</p>
-          </div>
-          <div class="card">
-            <h3>Lead change</h3>
-            <p>When the horse changes direction in a figure-eight, it switches its leading front leg mid-stride without breaking pace.</p>
-          </div>
-          <div class="card">
-            <h3>Back up</h3>
-            <p>The horse backs up in a straight line, quickly and willingly, for a set distance.</p>
-          </div>
+          <div class="card"><h3>Sliding stop</h3><p>From a fast lope, the horse sits back on its hind legs and slides to a stop, leaving long tracks in the dirt.</p></div>
+          <div class="card"><h3>Spin</h3><p>The horse turns in place, pivoting on its inside back foot. Good spins are fast, flat and stop exactly on target.</p></div>
+          <div class="card"><h3>Rollback</h3><p>Right after a stop, the horse swings around over its hind legs and lopes off the other way in one smooth move.</p></div>
+          <div class="card"><h3>Circles</h3><p>Big fast circles and small slow ones show that the rider controls the horse's speed and shape.</p></div>
+          <div class="card"><h3>Lead change</h3><p>When the horse changes direction in a figure-eight, it switches its leading front leg mid-stride without breaking pace.</p></div>
+          <div class="card"><h3>Back up</h3><p>The horse backs up in a straight line, quickly and willingly, for a set distance.</p></div>
         </div>
       </div>
     </section>
@@ -345,6 +239,7 @@
   </main>
 
   <footer>
+    <img src="img/badge.svg" width="660" height="660" loading="lazy" alt="">
     <p>&copy; 2026 Copper Mesa: Horse Reining &middot; An independent game in development</p>
     <p>No cookies, no tracking. Just horses.</p>
   </footer>
